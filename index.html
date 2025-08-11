@@ -1,182 +1,76 @@
-<!doctype html>
-<html lang="pl">
 <!DOCTYPE html>
 <html lang="pl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Moja Strona</title>
+  <title>Endixendi</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
     <div class="nav">
       <div class="brand">
-        <div class="logo">E</div>
-        <div>
-          <div style="font-weight:800">Endixendi</div>
-          <div style="font-size:12px;color:var(--muted);margin-top:2px">Gaming • Poradniki • Setup</div>
+        <div class="logo">
+          <img src="assets/images/4.png" alt="Logo" style="width:100%; height:100%; border-radius:8px;">
         </div>
+        <strong>Endixendi</strong>
       </div>
       <nav>
-        <a href="#home">Home</a>
-        <a href="#social">Media Społecznościowe</a>
-        <a href="#tworczosc">Twórczość</a>
-        <a href="#setup">Setup PC</a>
-        <a href="#o-mnie">O mnie</a>
-        <a href="#kontakt">Kontakt</a>
+        <a href="#about">O mnie</a>
+        <a href="#projects">Twórczość</a>
+        <a href="#contact">Kontakt</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <section id="home" class="hero">
-      <div class="card">
-        <h1>Witaj — jestem Endixendi</h1>
-        <p class="lead">Nagrywam gameplaye, poradniki i tworzę treści od 2014. Zobacz moje filmy, setup oraz gdzie możesz mnie znaleźć w social mediach.</p>
+    <section class="hero">
+      <div>
+        <h1>Cześć, tu Endixendi</h1>
+        <p class="lead">Tworzę materiały na YouTube oraz dzielę się moimi projektami.</p>
         <div class="cta">
-          <button class="btn" onclick="location.hash='#tworczosc'">Zobacz filmy</button>
-          <button class="ghost" onclick="location.hash='#setup'">Mój setup</button>
-        </div>
-
-        <div class="grid full" style="margin-top:16px">
-          <div class="card">
-            <h3>Social</h3>
-            <p class="muted">Wszystkie moje linki w jednym miejscu.</p>
-            <p><a class="inline-link" href="https://linktr.ee/endixendi" target="_blank" rel="noopener">linktr.ee/endixendi →</a></p>
-          </div>
-          <div class="card">
-            <h3>Najświeższe filmy</h3>
-            <p class="muted">Kliknij "Twórczość" aby przejść do filmu lub odwiedzić kanał.</p>
-            <p><a class="inline-link" href="https://www.youtube.com/@Endixendi" target="_blank" rel="noopener">YouTube — Endixendi</a></p>
-          </div>
+          <a href="https://www.youtube.com/@Endixendi" target="_blank" class="btn">Odwiedź kanał</a>
+          <a href="#projects" class="ghost">Zobacz twórczość</a>
         </div>
       </div>
-
-      <aside class="card">
-        <h3>Krótko o mnie</h3>
-        <p class="muted">Nagrywam od 2014. Gameplaye, poradniki i pasja do informatyki — to mnie napędza.</p>
-        <p style="margin-top:12px"><a class="btn" href="#o-mnie">Więcej</a></p>
-      </aside>
-    </section>
-
-    <section id="tworczosc" class="card" style="margin-top:22px">
-      <h2>Twórczość — filmy</h2>
-      <p class="muted">Pularniejsze materiały z kanału YouTube (@Endixendi)</p>
-
-      <div class="videos" id="videos">
-        <!-- przykładowe wstawki; zamień id filmu poniżej na swoje -->
-        <div class="video card">
-          <iframe src="https://www.youtube.com/watch?v=APCREFuigZk" title="YouTube video" allowfullscreen></iframe>
-          <div style="margin-top:8px"><strong>Przykładowy tytuł</strong></div>
-        </div>
-
-        <div class="video card">
-          <iframe src="https://youtu.be/eXZwitHgwZM?si=gpsTN0fcWlfjE_qw" title="YouTube video" allowfullscreen></iframe>
-          <div style="margin-top:8px"><strong>Przykładowy tytuł</strong></div>
-        </div>
-
+      <div class="card">
+        <h2>Specyfikacja sprzętu</h2>
+        <table class="specs">
+          <tr><td class="cat" colspan="2">Komputer</td></tr>
+          <tr><td>CPU</td><td>AMD Ryzen 5 5600</td></tr>
+          <tr><td>GPU</td><td>NVIDIA RTX 4060 8GB</td></tr>
+          <tr><td>RAM</td><td>16GB DDR4</td></tr>
+          <tr><td>SSD</td><td>1TB NVMe</td></tr>
+          <tr><td class="cat" colspan="2">Peripherals</td></tr>
+          <tr><td>Klawiatura</td><td>Mechaniczna</td></tr>
+          <tr><td>Mysz</td><td>Gamingowa</td></tr>
+        </table>
       </div>
-
-      <p style="margin-top:12px"><a class="btn" href="https://www.youtube.com/@Endixendi" target="_blank" rel="noopener">Odwiedź mój kanał</a></p>
     </section>
 
-    <section id="setup" class="card" style="margin-top:22px">
-      <h2>Setup PC — Specyfikacja</h2>
-      <p class="muted">Poniżej pełna konfiguracja.</p>
-
-      <table class="specs" aria-label="Specyfikacja komputera">
-        <tr><td class="cat">Procesor (CPU)</td><td>AMD Ryzen 7 5700X</td></tr>
-        <tr><td class="cat">Karta graficzna (GPU)</td><td>ASUS GeForce RTX 4060 Dual EVO OC, 8 GB</td></tr>
-        <tr><td class="cat">Płyta główna</td><td>ASUS ROG STRIX B550-F GAMING</td></tr>
-        <tr><td class="cat">Pamięć RAM</td><td>Kingston Fury Renegade, 2×16 GB, 3600 MHz, CL16</td></tr>
-        <tr><td class="cat">Zasilacz</td><td>Zalman ZM600-GSII, 600 W, 120 mm, ATX, 80Plus</td></tr>
-        <tr><td class="cat">Obudowa</td><td>ENDORFY Arx 700 Air</td></tr>
-
-        <tr><td class="cat">Dyski SSD</td><td>
-          WD Blue SN580 1 TB – odczyt 4150 MB/s, zapis 4150 MB/s<br>
-          Kingston A2000 500 GB – 2200 / 2000 MB/s<br>
-          Adata XPG SX8200 PRO 256 GB – 3500 / 1200 MB/s
-        </td></tr>
-
-        <tr><td class="cat">Dyski HDD</td><td>
-          Seagate 1 TB – ST1000DM010-2EP102<br>
-          Seagate 500 GB – ST3500312CS<br>
-          Seagate 500 GB – ST3500418AS<br>
-          WD 320 GB – WD3200BPVT-80ZEST0<br>
-          Toshiba External USB 3.0 (przenośny)
-        </td></tr>
-
-        <tr><td class="cat">System operacyjny</td><td>Windows 11 (64-bit)</td></tr>
-        <tr><td class="cat">Monitory</td><td>LG 29UM69G-B (29", IPS, USB-C) &amp; Iiyama GE2288HS-B1 (22", Full HD)</td></tr>
-        <tr><td class="cat">Chłodzenie CPU</td><td>ENDORFY Navis F360 ARGB, 3×120 mm</td></tr>
-      </table>
-
-      <h3 style="margin-top:18px">Urządzenia peryferyjne</h3>
-      <ul>
-        <li>Słuchawki: ENDORFY Viro Plus USB</li>
-        <li>Mikrofon: Endorfy Solum Streaming SM950</li>
-        <li>Mysz: GENESIS KRYPTON 770</li>
-        <li>Klawiatura: SPC Gear GK550 Omnis Kailh Brown RGB</li>
-        <li>Podkładki: GENESIS CARBON 500 M FIRE; A4 Tech XGame X7-500MP</li>
-        <li>Fotel: HUZARO FORCE 6.0 Red Gaming Armchair</li>
-        <li>Kamera: Logitech HD Pro C920</li>
-        <li>Tablet graficzny: XP-PEN Star G640</li>
-        <li>Gamepad: PowerA przewodowy Xbox Series / Xbox One</li>
-      </ul>
+    <section id="projects" style="margin-top:40px;">
+      <h2>Twórczość</h2>
+      <p class="lead">Pierwszy materiał z kanału YouTube (@Endixendi) który zaczął moją przygodę z nagrywaniem to MTA lecz pierwszy film na kanale był z Minecrafta.</p>
+      <div class="videos">
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/eXZwitHgwZM" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/lqi6XXv5g10" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
     </section>
 
-    <section id="o-mnie" class="card" style="margin-top:22px">
-      <h2>O mnie</h2>
-      <p>Filmy na kanale YouTube „Endixendi” zacząłem publikować hobbystycznie w 2014 roku. Moja seria filmów z MTA szybko zdobyła popularność. Z powodu szkoły i później studiów moja aktywność spadła, ale dalej nagrywam gameplaye i poradniki. Studia informatyczne pomagają mi rozwijać umiejętności i tworzyć lepsze treści. Chcę rozwijać kanał i społeczność — może razem dotrzemy dalej!</p>
-    </section>
-
-    <section id="kontakt" class="card" style="margin-top:22px">
+    <section id="contact" style="margin-top:40px;">
       <h2>Kontakt</h2>
-      <p>Email: <a class="inline-link" href="mailto:kontakt.endixendi@gmail.com">kontakt.endixendi@gmail.com</a></p>
-      <p>Discord: <span class="muted">Endixendi</span></p>
-      <p>Chcesz wesprzeć moją pracę? <button class="btn" onclick="openDonate()">Donate</button></p>
+      <p class="lead">Jeśli chcesz się ze mną skontaktować, zapraszam na Discord.</p>
+      <p><a href="https://discord.com/invite/MwGVnXWUaW" target="_blank" class="inline-link">Endixendi</a></p>
     </section>
-
   </main>
 
   <footer>
-    <div>© <strong>Endixendi</strong> — Wszystkie prawa zastrzeżone</div>
+    <p>© 2025 Endixendi — Wszystkie prawa zastrzeżone</p>
   </footer>
-
-  <script>
-    // Auto-redirect when user goes to #social
-    (function(){
-      function maybeRedirect(){
-        if(location.hash === '#social' || location.hash === '#media' || location.pathname.endsWith('/social')){
-          // redirect to linktr.ee — opens in same tab
-          window.location.replace('https://linktr.ee/endixendi');
-        }
-      }
-      // run on load
-      maybeRedirect();
-      // also catch clicks to links that set hash
-      window.addEventListener('hashchange', maybeRedirect);
-
-      // Donate placeholder
-      window.openDonate = function(){
-        // replace with your donate link (PayPal, Ko-fi, BuyMeACoffee, etc.)
-        var donateUrl = 'https://www.paypal.com/donate?hosted_button_id=REPLACE_ME';
-        window.open(donateUrl,'_blank');
-      }
-
-      // Smooth scroll for anchors
-      document.querySelectorAll('a[href^="#"]').forEach(function(a){
-        a.addEventListener('click', function(e){
-          var hash = this.getAttribute('href');
-          if(hash && hash.length>1){
-            var target = document.querySelector(hash);
-            if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth',block:'start'}); }
-          }
-        });
-      });
-    })();
-  </script>
 </body>
 </html>
 
