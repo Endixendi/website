@@ -1,4 +1,5 @@
 :root {
+  /* Kolory i zmienne globalne */
   --bg: #0f1115;
   --card: #14171b;
   --muted: #98a0aa;
@@ -10,25 +11,28 @@
 }
 
 * {
-  box-sizing: border-box;
+  box-sizing: border-box; /* Ustawia model pudełkowy */
 }
 
 body {
   margin: 0;
+  /* Tło gradientowe strony */
   background: linear-gradient(180deg, #07070a 0%, var(--bg) 100%);
   color: #e6eef6;
   line-height: 1.5;
 }
 
+/* Nagłówek - pasek nawigacji */
 header {
-  position: sticky;
+  position: sticky; /* Przyklejony do góry podczas scrollowania */
   top: 0;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.15));
-  backdrop-filter: blur(6px);
-  z-index: 50;
+  backdrop-filter: blur(6px); /* Efekt rozmycia tła pod nagłówkiem */
+  z-index: 50; /* Nad innymi elementami */
   border-bottom: 1px solid rgba(255, 255, 255, 0.03);
 }
 
+/* Kontener nawigacji */
 .nav {
   max-width: var(--maxw);
   margin: 0 auto;
@@ -38,6 +42,7 @@ header {
   padding: 12px;
 }
 
+/* Logo i nazwa marki */
 .brand {
   display: flex;
   gap: 12px;
@@ -56,30 +61,52 @@ header {
   color: #071017;
 }
 
-nav a {
-  color: var(--muted);
-  text-decoration: none;
-  margin-left: 18px;
-  font-weight: 600;
+.logo-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
 }
 
+.brand-name {
+  font-weight: 800;
+}
+
+.brand-subtitle {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+/* Linki w menu nawigacyjnym */
+nav a {
+  color: var(--muted);
+  text-decoration: none; /* Usuwa podkreślenie */
+  margin-left: 18px;
+  font-weight: 600;
+  transition: color 0.2s ease-in-out; /* Płynna zmiana koloru */
+}
+
+/* Efekt hover na linkach menu */
 nav a:hover {
   color: var(--accent);
 }
 
+/* Główny kontener strony */
 main {
   max-width: var(--maxw);
   margin: 28px auto;
   padding: 0 16px;
 }
 
+/* Sekcja hero - powitanie i główny content */
 .hero {
   display: grid;
-  grid-template-columns: 1fr 360px;
+  grid-template-columns: 1fr 360px; /* Dwie kolumny, prawa stała szerokość */
   gap: 24px;
-  align-items: center;
+  align-items: start;
 }
 
+/* Karty z tłem i cieniowaniem */
 .card {
   background: var(--card);
   padding: 18px;
@@ -87,22 +114,27 @@ main {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
 }
 
+/* Nagłówki w sekcji hero */
 .hero h1 {
   margin: 0 0 8px;
   font-size: 28px;
 }
 
+/* Tekst wprowadzający */
 .lead {
   color: var(--muted);
   margin-bottom: 12px;
 }
 
+/* Kontener na przyciski CTA */
 .cta {
   display: flex;
   gap: 10px;
 }
 
-.btn {
+/* Style dla przycisków i linków z klasą btn */
+.btn,
+a.btn {
   background: linear-gradient(90deg, var(--accent), var(--accent-2));
   border: none;
   padding: 10px 14px;
@@ -110,16 +142,40 @@ main {
   color: #071017;
   font-weight: 700;
   cursor: pointer;
+  transition: opacity 0.2s ease-in-out;
+  display: inline-block;
+  text-decoration: none; /* Usuwa podkreślenie w linkach */
 }
 
+/* Efekt hover na przyciskach */
+.btn:hover,
+a.btn:hover {
+  opacity: 0.85;
+}
+
+/* Klasa pomocnicza z marginesem górnym */
+.btn.mt-12,
+a.btn.mt-12 {
+  margin-top: 12px;
+}
+
+/* Styl przycisku typu ghost (przezroczysty) */
 .ghost {
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.06);
   color: var(--muted);
   padding: 10px 14px;
   border-radius: 10px;
+  cursor: pointer;
+  transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
+.ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Grid dla elementów w sekcjach */
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -127,11 +183,12 @@ main {
   margin-top: 18px;
 }
 
+/* Klasa dla elementu zajmującego całą szerokość gridu */
 .full {
   grid-column: 1/-1;
 }
 
-/* Setup table */
+/* Tabela specyfikacji setupu */
 table.specs {
   width: 100%;
   border-collapse: collapse;
@@ -143,6 +200,7 @@ table.specs th {
   border-bottom: 1px solid rgba(255, 255, 255, 0.03);
 }
 
+/* Kategoria w tabeli z gradientem tła */
 .cat {
   background: linear-gradient(90deg, var(--accent), transparent);
   font-weight: 700;
@@ -150,21 +208,28 @@ table.specs th {
   padding-left: 12px;
 }
 
-/* Videos */
+/* Sekcja z filmami wideo */
 .videos {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 12px;
 }
 
+/* Styl iframe wideo */
 .video iframe {
   width: 100%;
-  max-width: 640px;
   aspect-ratio: 16 / 9;
   border-radius: 8px;
   border: 0;
 }
 
+/* Tytuł filmu pod iframe */
+.video-title {
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+/* Stopka */
 footer {
   max-width: var(--maxw);
   margin: 36px auto 80px;
@@ -172,32 +237,127 @@ footer {
   color: var(--muted);
 }
 
-/* responsive */
+/* Styl iframe Snapwidget (Instagram) */
+.snapwidget-widget {
+  border: none;
+  overflow: hidden;
+  width: 950px;
+  height: 380px;
+}
+
+/* Klasy pomocnicze */
+
+/* Kolor dla tekstu wyciszonego */
+.muted {
+  color: var(--muted);
+}
+
+/* Linki inline z akcentem */
+a.inline-link {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a.inline-link:hover {
+  text-decoration: underline;
+}
+
+/* Klasy pomocnicze do marginesów */
+.mt-12 { margin-top: 12px; }
+.mt-16 { margin-top: 16px; }
+.mt-18 { margin-top: 18px; }
+.mt-22 { margin-top: 22px; }
+
+/* Responsywność - dla ekranów mniejszych niż 900px */
 @media (max-width: 900px) {
   .hero {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Jedna kolumna na telefonie */
   }
   .nav {
     padding: 10px;
+    flex-wrap: wrap; /* Zawijanie elementów w menu */
   }
   .brand .logo {
     width: 40px;
     height: 40px;
   }
   .grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Jeden element w gridzie */
   }
   .video iframe {
     height: 200px;
   }
+  .snapwidget-widget {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 25 / 10;
+  }
 }
 
-/* small helpers */
-.muted {
+/* Odstęp między menu a sekcjami podczas scrollowania */
+section {
+  scroll-margin-top: 80px; /* wysokość menu */
+}
+
+/* Menu nawigacyjne */
+nav {
+  display: flex;
+  gap: 18px;
+  position: relative;
+}
+
+/* Linki w menu */
+nav a {
   color: var(--muted);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 6px 10px;
+  display: inline-block;
+  cursor: pointer;
 }
 
-a.inline-link {
+/* Efekt hover na linkach i przycisku dropdown */
+nav a:hover,
+.dropbtn:hover {
   color: var(--accent);
+}
+
+/* Kontener dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Ukrywamy zawartość dropdown domyślnie */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--card);
+  min-width: 160px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  z-index: 100;
+  top: 100%; /* pojawia się tuż pod przyciskiem */
+  left: 0;
+  padding: 8px 0;
+}
+
+/* Linki w dropdown */
+.dropdown-content a {
+  color: var(--muted);
+  padding: 8px 16px;
   text-decoration: none;
+  display: block;
+  font-weight: 500;
+}
+
+/* Efekt hover linków w dropdown */
+.dropdown-content a:hover {
+  background-color: var(--accent);
+  color: #071017;
+}
+
+/* Pokazuje dropdown-content po najechaniu na dropdown */
+.dropdown:hover .dropdown-content {
+  display: block;
 }
