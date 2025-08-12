@@ -1,7 +1,5 @@
 <!doctype html>
 <html lang="pl">
-<!DOCTYPE html>
-<html lang="pl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,21 +12,29 @@
     <div class="nav">
       <div class="brand">
         <div class="logo">
-	  <img src="assets/images/4.png" alt="Logo" style="width:100%; height:100%; border-radius:8px;">
-	</div>
+          <img src="assets/images/4.png" alt="Logo" class="logo-img">
+        </div>
         <div>
-          <div style="font-weight:800">Endixendi</div>
-          <div style="font-size:12px;color:var(--muted);margin-top:2px">Gaming • Poradniki • Setup</div>
+          <div class="brand-name">Endixendi</div>
+          <div class="brand-subtitle">Gaming • Poradniki • Setup</div>
         </div>
       </div>
-      <nav>
-        <a href="#home">Home</a>
-        <a href="#social">Media Społecznościowe</a>
-        <a href="#tworczosc">Twórczość</a>
-        <a href="#setup">Setup PC</a>
-        <a href="#o-mnie">O mnie</a>
-        <a href="#kontakt">Kontakt</a>
-      </nav>
+		<nav>
+		  <a href="#home">Home</a>
+		  <!--<a href="#ig">Zdjęcia</a>-->
+		  <a href="#tworczosc">Twórczość</a>
+		  <a href="#setup">Setup PC</a>
+		  <a href="#o-mnie">O mnie</a>
+		  <a href="#kontakt">Kontakt</a>
+
+		  <div class="dropdown">
+			<a href="#media" class="dropbtn" id="mediaBtn">Media ▾</a>
+			<div class="dropdown-content" id="mediaDropdown">
+			  <a href="#ig">Instagram</a>
+			  <a href="#spotify">Spotify</a>
+			</div>
+		  </div>
+		</nav>
     </div>
   </header>
 
@@ -38,11 +44,11 @@
         <h1>Witaj — jestem Endixendi</h1>
         <p class="lead">Nagrywam gameplaye, poradniki i tworzę treści od 2014. Zobacz moje filmy, setup oraz gdzie możesz mnie znaleźć w social mediach.</p>
         <div class="cta">
-          <button class="btn" onclick="location.hash='#tworczosc'">Zobacz filmy</button>
-          <button class="ghost" onclick="location.hash='#setup'">Mój setup</button>
+          <button class="btn" data-scroll="#tworczosc">Zobacz filmy</button>
+          <button class="ghost" data-scroll="#setup">Mój setup</button>
         </div>
 
-        <div class="grid full" style="margin-top:16px">
+        <div class="grid full mt-16">
           <div class="card">
             <h3>Social Media</h3>
             <p class="muted">Wszystkie moje linki w jednym miejscu.</p>
@@ -50,7 +56,7 @@
           </div>
           <div class="card">
             <h3>Najświeższe filmy</h3>
-            <p class="muted">Kliknij "Twórczość" aby przejść do filmu lub odwiedzić kanał.</p>
+            <p class="muted">Kliknij aby odwiedzić mój kanał.</p>
             <p><a class="inline-link" href="https://www.youtube.com/@Endixendi" target="_blank" rel="noopener">YouTube — Endixendi</a></p>
           </div>
         </div>
@@ -59,30 +65,26 @@
       <aside class="card">
         <h3>Krótko o mnie</h3>
         <p class="muted">Nagrywam od 2014. Gameplaye, poradniki i pasja do informatyki — to mnie napędza.</p>
-    <!--  <p style="margin-top:12px"><a class="btn" href="#o-mnie">Więcej</a></p> -->
-	<a class="btn" href="#o-mnie" style="text-decoration:none; margin-top:12px; display:inline-block;">Więcej</a>
+        <a class="btn mt-12" href="#o-mnie">Więcej</a>
       </aside>
     </section>
 
-    <section id="tworczosc" class="card" style="margin-top:22px">
+    <section id="tworczosc" class="card mt-22">
       <h2>Twórczość — filmy</h2>
       <p class="muted">Pierwszy materiał z kanału YouTube (@Endixendi) który zaczął moją przygodę z nagrywaniem to MTA lecz pierwszy film na kanale był z Minecrafta.</p>
 
       <div class="videos" id="videos">
-		  
         <div class="video card">
           <iframe src="https://www.youtube.com/embed/eXZwitHgwZM" title="YouTube video" allowfullscreen></iframe>
-          <div style="margin-top:8px"><strong>Poznaj Moją Twórczość</strong></div>
+          <div class="video-title">Poznaj Moją Twórczość</div>
         </div>
-
         <div class="video card">
           <iframe src="https://www.youtube.com/embed/lqi6XXv5g10" title="YouTube video" allowfullscreen></iframe>
-          <div style="margin-top:8px"><strong>Piewrszy Film Który Zachęcił Mnie Do Nagrywania</strong></div>
+          <div class="video-title">Pierwszy Film Który Zachęcił Mnie Do Nagrywania</div>
         </div>
-
       </div>
 
-      <a class="btn" href="https://www.youtube.com/@Endixendi" style="text-decoration:none; margin-top:12px; display:inline-block;">Odwiedź mój kanał</a>
+      <a class="btn mt-12" href="https://www.youtube.com/@Endixendi" target="_blank" rel="noopener">Odwiedź mój kanał</a>
     </section>
 
     <section id="setup" class="card" style="margin-top:22px">
@@ -131,63 +133,45 @@
       </ul>
     </section>
 
-    <section id="o-mnie" class="card" style="margin-top:22px">
+    <section id="o-mnie" class="card mt-22">
       <h2>O mnie</h2>
       <p>Filmy na kanale YouTube „Endixendi” zacząłem publikować hobbystycznie w 2014 roku. Moja seria filmów z MTA szybko zdobyła popularność. Z powodu szkoły i później studiów moja aktywność spadła, ale dalej nagrywam gameplaye i poradniki. Studia informatyczne pomagają mi rozwijać umiejętności i tworzyć lepsze treści. Chcę rozwijać kanał i społeczność — może razem dotrzemy dalej!</p>
     </section>
 
-<section id="social" class="card" style="margin-top:22px">
-  <h2>Instagram - <a class="inline-link" href="https://www.instagram.com/endixendi/">@Endixendi</a></h2>
-<!-- SnapWidget -->
-<iframe src="https://snapwidget.com/embed/1105116" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden;  width:950px; height:380px" title="Posts from Instagram"></iframe>
-</section>
-
-    <section id="kontakt" class="card" style="margin-top:22px">
+    <section id="kontakt" class="card mt-22">
       <h2>Kontakt</h2>
       <p>Email: <a class="inline-link" href="mailto:kontakt.endixendi@gmail.com">kontakt.endixendi@gmail.com</a></p>
       <p>Discord: <a href="https://discord.com/invite/MwGVnXWUaW" target="_blank" rel="noopener" class="inline-link">Endixendi</a></p>
-      <p>Chcesz wesprzeć moją pracę? <button class="btn" onclick="openDonate()">Donate</button></p>
+	  <p>Social Media: <a class="inline-link" href="https://linktr.ee/endixendi" target="_blank" rel="noopener">linktr.ee/endixendi</a></p>
+      <p>Chcesz wesprzeć moją pracę? <button class="btn" id="donate-btn">Donate</button></p>
     </section>
+	
+	<section id="ig" class="card mt-22">
+      <h2>Instagram - <a class="inline-link" href="https://www.instagram.com/endixendi/">@Endixendi</a></h2>
+      <iframe src="https://snapwidget.com/embed/1105116" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" title="Posts from Instagram"></iframe>
+    </section>
+	
+	<section id="spotify" class="card mt-22">
+	  <h2>Playlista Spoti</h2>
+	  <p>Moja autorska playlista — muzyka, którą sam wybrałem i polecam!</p>
 
+	  <!-- Player Spotify -->
+    <iframe 
+      style="border-radius:12px"
+      src="https://open.spotify.com/embed/playlist/2qrALXJZta6M1PdaW8QRCE?utm_source=generator"
+      width="100%" 
+      height="352" 
+      frameborder="0"
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy">
+    </iframe>
+	</section>
   </main>
 
   <footer>
     <div>© <strong>Endixendi</strong> — Wszystkie prawa zastrzeżone</div>
   </footer>
 
-  <script>
-    // Auto-redirect when user goes to #social
-    (function(){
-      function maybeRedirect(){
-        if(location.hash === '#social' || location.hash === '#media' || location.pathname.endsWith('/social')){
-          // redirect to linktr.ee — opens in same tab
-          window.location.replace('https://linktr.ee/endixendi');
-        }
-      }
-      // run on load
-      maybeRedirect();
-      // also catch clicks to links that set hash
-      window.addEventListener('hashchange', maybeRedirect);
-
-      // Donate placeholder
-      window.openDonate = function(){
-        // replace with your donate link (PayPal, Ko-fi, BuyMeACoffee, etc.)
-        var donateUrl = 'https://streamelements.com/endixendi/tip';
-        window.open(donateUrl,'_blank');
-      }
-
-      // Smooth scroll for anchors
-      document.querySelectorAll('a[href^="#"]').forEach(function(a){
-        a.addEventListener('click', function(e){
-          var hash = this.getAttribute('href');
-          if(hash && hash.length>1){
-            var target = document.querySelector(hash);
-            if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth',block:'start'}); }
-          }
-        });
-      });
-    })();
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
-
