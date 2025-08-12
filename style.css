@@ -342,22 +342,23 @@ nav a:hover,
   padding: 8px 0;
 }
 
-/* Linki w dropdown */
+/* Linki w dropdown 
 .dropdown-content a {
   color: var(--muted);
   padding: 8px 16px;
   text-decoration: none;
   display: block;
   font-weight: 500;
-}
+}*/
 
-/* Efekt hover linków w dropdown */
+/* Efekt hover linków w dropdown 
 .dropdown-content a:hover {
   background-color: var(--accent);
   color: #071017;
-}
+}*/
 
 /* Pokazuje dropdown-content po najechaniu na dropdown */
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
