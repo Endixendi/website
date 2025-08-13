@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Endixendi - Tools</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="assets/images/kolo.png" type="image/png">
+</head>
+<body>
+
+<!-- =========================
+     HEADER - pasek nawigacji
+     ========================= -->
+<header>
+  <div class="nav">
+
+    <!-- BRAND / LOGO I NAZWA MARKI -->
+    <div class="brand">
+      <div class="logo">
+        <img src="assets/images/4.png" alt="Logo" class="logo-img">
+      </div>
+      <div>
+        <div class="brand-name">Endixendi</div>
+        <div class="brand-subtitle">Gaming • Streaming • Poradniki • PC</div>
+      </div>
+    </div>
+    <!-- /BRAND -->
+
+    <!-- MENU HAMBURGER (widoczne tylko na mobile) -->
+    <div class="menu-icon" id="menu-toggle">☰</div>
+
+    <!-- MENU GŁÓWNE -->
+    <nav id="main-nav">
+      <a href="index.html#home">Home</a>
+      <a href="index.html#tworczosc">Twórczość</a>
+      <a href="index.html#pc">PC</a>
+      <a href="index.html#o-mnie">O mnie</a>
+      <a href="index.html#kontakt">Kontakt</a>
+
+      <!-- DROPDOWN: NARZĘDZIA -->
+      <div class="dropdown">
+        <a href="javascript:void(0)" class="dropbtn">Narzędzia ▾</a>
+        <div class="dropdown-content">
+          <a href="tools.html">Tools</a>
+        </div>
+      </div>
+
+      <!-- DROPDOWN: MEDIA -->
+      <div class="dropdown">
+        <a href="index.html#media" class="dropbtn">Media ▾</a>
+        <div class="dropdown-content">
+          <a href="index.html#ig">Instagram</a>
+          <a href="index.html#spotify">Spotify</a>
+        </div>
+      </div>
+    </nav>
+    <!-- /MENU GŁÓWNE -->
+
+  </div>
+</header>
+<!-- /HEADER -->
+
+<!-- =========================
+     MAIN CONTENT - główna zawartość strony
+     ========================= -->
+<main>
+
+  <!-- HERO TOOLS - nagłówek sekcji narzędzi -->
+  <section id="tools-hero" class="mt-16">
+    <div class="card">
+      <h1>Tools — Narzędzia od Endixendi</h1>
+      <p class="lead">Przydatne programy do nagrywania, montażu i tworzenia grafiki. Wszystko w jednym miejscu!</p>
+    </div>
+  </section>
+  <!-- /HERO TOOLS -->
+
+  <!-- LISTA PROGRAMÓW -->
+  <section id="tools-list" class="card mt-22">
+    <h2>Programy</h2>
+
+    <!-- GRID Z KARTAMI PROGRAMÓW -->
+    <div class="grid full mt-16">
+
+      <div class="card">
+        <h3>OBS Studio</h3>
+        <p class="muted">Profesjonalne oprogramowanie do nagrywania i streamowania rozgrywki.</p>
+        <a class="btn" href="https://obsproject.com/" target="_blank" rel="noopener">Otwórz OBS</a>
+      </div>
+
+      <div class="card">
+        <h3>DaVinci Resolve</h3>
+        <p class="muted">Potężny program do montażu wideo, korekcji kolorów i postprodukcji.</p>
+        <a class="btn" href="https://www.blackmagicdesign.com/pl/products/davinciresolve" target="_blank" rel="noopener">Otwórz DaVinci Resolve</a>
+      </div>
+
+      <div class="card">
+        <h3>Photopea</h3>
+        <p class="muted">Edytor grafiki online przypominający Photoshop, działa w przeglądarce.</p>
+        <a class="btn" href="https://www.photopea.com/" target="_blank" rel="noopener">Otwórz Photopea</a>
+      </div>
+
+      <div class="card">
+        <h3>Vectorpea</h3>
+        <p class="muted">Edytor grafiki wektorowej online, idealny do tworzenia logo i ilustracji.</p>
+        <a class="btn" href="https://www.vectorpea.com/" target="_blank" rel="noopener">Otwórz Vectorpea</a>
+      </div>
+
+    </div>
+    <!-- /GRID Z KARTAMI PROGRAMÓW -->
+  </section>
+  <!-- /LISTA PROGRAMÓW -->
+
+  <!-- PORADNIKI NA YOUTUBE -->
+  <section id="tools-youtube" class="card mt-22">
+    <h2>Poradniki na YouTube</h2>
+    <p class="muted">Wybierz film z playlisty poniżej - Prawy górny róg</p>
+
+    <iframe width="100%" height="480"
+      src="https://www.youtube.com/embed/videoseries?list=PLYamA4_P1kCyv75qBLehcRAGPNgbJ2LYP"
+      title="Poradniki Endixendi"
+      frameborder="0"
+      allow="autoplay; encrypted-media; fullscreen"
+      allowfullscreen>
+    </iframe>
+  </section>
+  <!-- /PORADNIKI NA YOUTUBE -->
+
+</main>
+<!-- /MAIN CONTENT -->
+
+<!-- =========================
+     FOOTER
+     ========================= -->
+<footer>
+  <div>© <strong>Endixendi</strong> — Wszystkie prawa zastrzeżone</div>
+</footer>
+<!-- /FOOTER -->
+
+<!-- SKRYPTY JS -->
+<script src="script.js"></script>
+</body>
+</html>
