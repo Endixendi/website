@@ -1,59 +1,61 @@
 :root {
-  /* Kolory i zmienne globalne */
-  --bg: #0f1115;
-  --card: #14171b;
-  --muted: #98a0aa;
-  --accent: #00aaff;
-  --accent-2: #ffcc00;
-  --glass: rgba(255, 255, 255, 0.03);
-  --maxw: 1100px;
-  font-family: Inter, system-ui, -apple-system, Arial, sans-serif;
+  /* =========================
+     Kolory i zmienne globalne
+     ========================= */
+  --bg: #0f1115; /* Kolor tła strony */
+  --card: #14171b; /* Tło kart i elementów */
+  --muted: #98a0aa; /* Kolor wyciszonego tekstu */
+  --accent: #00aaff; /* Główny kolor akcentu */
+  --accent-2: #ffcc00; /* Drugi kolor akcentu */
+  --glass: rgba(255, 255, 255, 0.03); /* Efekt szkła (przezroczystość) */
+  --maxw: 1100px; /* Maksymalna szerokość kontenera */
+  font-family: Inter, system-ui, -apple-system, Arial, sans-serif; /* Font globalny */
 }
 
 * {
-  box-sizing: border-box; /* Ustawia model pudełkowy */
+  box-sizing: border-box; /* Ustawia model pudełkowy na wszystkich elementach */
 }
 
 body {
-  margin: 0;
-  /* Tło gradientowe strony */
-  background: linear-gradient(180deg, #07070a 0%, var(--bg) 100%);
-  color: #e6eef6;
-  line-height: 1.5;
+  margin: 0; /* Usunięcie domyślnych marginesów */
+  background: linear-gradient(180deg, #07070a 0%, var(--bg) 100%); /* Gradient tła strony */
+  color: #e6eef6; /* Kolor tekstu */
+  line-height: 1.5; /* Odstęp między wierszami */
 }
 
-/* Nagłówek - pasek nawigacji */
+/* =========================
+   Nagłówek i pasek nawigacji
+   ========================= */
 header {
   position: sticky; /* Przyklejony do góry podczas scrollowania */
   top: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.15));
-  backdrop-filter: blur(6px); /* Efekt rozmycia tła pod nagłówkiem */
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.15)); /* Półprzezroczyste tło */
+  backdrop-filter: blur(6px); /* Rozmycie tła pod nagłówkiem */
   z-index: 50; /* Nad innymi elementami */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03); /* Delikatna linia na dole */
 }
 
-/* Kontener nawigacji */
 .nav {
-  max-width: var(--maxw);
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px;
+  max-width: var(--maxw); /* Maksymalna szerokość kontenera */
+  margin: 0 auto; /* Wyśrodkowanie */
+  display: flex; /* Flexbox dla elementów w linii */
+  align-items: center; /* Wyrównanie w pionie */
+  justify-content: space-between; /* Rozdzielenie elementów */
+  padding: 12px; /* Wewnętrzny odstęp */
 }
 
 /* Logo i nazwa marki */
 .brand {
   display: flex;
-  gap: 12px;
+  gap: 12px; /* Odstęp między logo a nazwą */
   align-items: center;
 }
 
 .brand .logo {
   width: 44px;
   height: 44px;
-  border-radius: 8px;
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  border-radius: 8px; /* Zaokrąglone rogi */
+  background: linear-gradient(135deg, var(--accent), var(--accent-2)); /* Gradient logo */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -64,7 +66,7 @@ header {
 .logo-img {
   width: 100%;
   height: 100%;
-  border-radius: 8px;
+  border-radius: 8px; /* Zaokrąglenie obrazka logo */
 }
 
 .brand-name {
@@ -77,36 +79,68 @@ header {
   margin-top: 2px;
 }
 
-/* Linki w menu nawigacyjnym */
+/* =========================
+   Menu nawigacyjne
+   ========================= */
 nav a {
-  color: var(--muted);
-  text-decoration: none; /* Usuwa podkreślenie */
+  color: var(--muted); /* Kolor linków */
+  text-decoration: none; /* Brak podkreślenia */
   margin-left: 18px;
   font-weight: 600;
   transition: color 0.2s ease-in-out; /* Płynna zmiana koloru */
 }
 
-/* Efekt hover na linkach menu */
 nav a:hover {
-  color: var(--accent);
+  color: var(--accent); /* Efekt hover linków */
 }
 
-/* Główny kontener strony */
+/* =========================
+   Główny kontener strony
+   ========================= */
 main {
   max-width: var(--maxw);
   margin: 28px auto;
   padding: 0 16px;
 }
 
-/* Sekcja hero - powitanie i główny content */
+/* =========================
+   Sekcja hero
+   ========================= */
 .hero {
-  display: grid;
-  grid-template-columns: 1fr 360px; /* Dwie kolumny, prawa stała szerokość */
-  gap: 24px;
-  align-items: start;
+  display: grid; /* Układ w gridzie */
+  grid-template-columns: 2fr 1fr; /* Lewa kolumna szersza od prawej */
+  gap: 24px; /* Odstęp między kolumnami */
+  align-items: start; /* Wyrównanie do góry */
 }
 
-/* Karty z tłem i cieniowaniem */
+/* Na mniejszych ekranach (telefon) */
+@media screen and (max-width: 1200px) {
+  .hero {
+    grid-template-columns: 1fr; /* Jedna kolumna na mobile */
+    gap: 16px;
+  }
+}
+
+/* Kontenery w hero */
+.hero > .card-container {
+  flex: 2; /* Lewa kolumna elastyczna */
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Dwa elementy w wierszu */
+  gap: 16px;
+}
+
+.hero > aside {
+  flex: 1; /* Prawa kolumna */
+}
+
+.hero > * {
+  display: flex;
+  flex-direction: column; /* Wszystkie dzieci ustawione w kolumnie */
+}
+
+/* =========================
+   Karty i przyciski
+   ========================= */
 .card {
   background: var(--card);
   padding: 18px;
@@ -114,25 +148,21 @@ main {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
 }
 
-/* Nagłówki w sekcji hero */
 .hero h1 {
   margin: 0 0 8px;
   font-size: 28px;
 }
 
-/* Tekst wprowadzający */
 .lead {
   color: var(--muted);
   margin-bottom: 12px;
 }
 
-/* Kontener na przyciski CTA */
 .cta {
   display: flex;
   gap: 10px;
 }
 
-/* Style dla przycisków i linków z klasą btn */
 .btn,
 a.btn {
   background: linear-gradient(90deg, var(--accent), var(--accent-2));
@@ -144,22 +174,19 @@ a.btn {
   cursor: pointer;
   transition: opacity 0.2s ease-in-out;
   display: inline-block;
-  text-decoration: none; /* Usuwa podkreślenie w linkach */
+  text-decoration: none;
 }
 
-/* Efekt hover na przyciskach */
 .btn:hover,
 a.btn:hover {
   opacity: 0.85;
 }
 
-/* Klasa pomocnicza z marginesem górnym */
 .btn.mt-12,
 a.btn.mt-12 {
   margin-top: 12px;
 }
 
-/* Styl przycisku typu ghost (przezroczysty) */
 .ghost {
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.06);
@@ -175,7 +202,9 @@ a.btn.mt-12 {
   color: var(--accent);
 }
 
-/* Grid dla elementów w sekcjach */
+/* =========================
+   Grid dla innych sekcji
+   ========================= */
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -183,12 +212,13 @@ a.btn.mt-12 {
   margin-top: 18px;
 }
 
-/* Klasa dla elementu zajmującego całą szerokość gridu */
 .full {
-  grid-column: 1/-1;
+  grid-column: 1/-1; /* Element zajmuje całą szerokość gridu */
 }
 
-/* Tabela specyfikacji setupu */
+/* =========================
+   Tabela specyfikacji
+   ========================= */
 table.specs {
   width: 100%;
   border-collapse: collapse;
@@ -200,7 +230,6 @@ table.specs th {
   border-bottom: 1px solid rgba(255, 255, 255, 0.03);
 }
 
-/* Kategoria w tabeli z gradientem tła */
 .cat {
   background: linear-gradient(90deg, var(--accent), transparent);
   font-weight: 700;
@@ -208,14 +237,15 @@ table.specs th {
   padding-left: 12px;
 }
 
-/* Sekcja z filmami wideo */
+/* =========================
+   Sekcja wideo
+   ========================= */
 .videos {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 12px;
 }
 
-/* Styl iframe wideo */
 .video iframe {
   width: 100%;
   aspect-ratio: 16 / 9;
@@ -223,13 +253,14 @@ table.specs th {
   border: 0;
 }
 
-/* Tytuł filmu pod iframe */
 .video-title {
   margin-top: 8px;
   font-weight: bold;
 }
 
-/* Stopka */
+/* =========================
+   Stopka
+   ========================= */
 footer {
   max-width: var(--maxw);
   margin: 36px auto 80px;
@@ -237,7 +268,9 @@ footer {
   color: var(--muted);
 }
 
-/* Styl iframe Snapwidget (Instagram) */
+/* =========================
+   Instagram / Snapwidget
+   ========================= */
 .snapwidget-widget {
   border: none;
   overflow: hidden;
@@ -245,14 +278,11 @@ footer {
   height: 380px;
 }
 
-/* Klasy pomocnicze */
+/* =========================
+   Klasy pomocnicze
+   ========================= */
+.muted { color: var(--muted); }
 
-/* Kolor dla tekstu wyciszonego */
-.muted {
-  color: var(--muted);
-}
-
-/* Linki inline z akcentem */
 a.inline-link {
   color: var(--accent);
   text-decoration: none;
@@ -262,73 +292,33 @@ a.inline-link:hover {
   text-decoration: underline;
 }
 
-/* Klasy pomocnicze do marginesów */
 .mt-12 { margin-top: 12px; }
 .mt-16 { margin-top: 16px; }
 .mt-18 { margin-top: 18px; }
 .mt-22 { margin-top: 22px; }
 
-/* Responsywność - dla ekranów mniejszych niż 900px */
+/* =========================
+   Responsywność
+   ========================= */
 @media (max-width: 900px) {
-  .hero {
-    grid-template-columns: 1fr; /* Jedna kolumna na telefonie */
-  }
-  .nav {
-    padding: 10px;
-    flex-wrap: wrap; /* Zawijanie elementów w menu */
-  }
-  .brand .logo {
-    width: 40px;
-    height: 40px;
-  }
-  .grid {
-    grid-template-columns: 1fr; /* Jeden element w gridzie */
-  }
-  .video iframe {
-    height: 200px;
-  }
-  .snapwidget-widget {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 25 / 10;
-  }
+  .hero { grid-template-columns: 1fr; }
+  .nav { padding: 10px; flex-wrap: wrap; }
+  .brand .logo { width: 40px; height: 40px; }
+  .grid { grid-template-columns: 1fr; }
+  .video iframe { height: 200px; }
+  .snapwidget-widget { width: 100%; height: auto; aspect-ratio: 25 / 10; }
 }
 
-/* Odstęp między menu a sekcjami podczas scrollowania */
-section {
-  scroll-margin-top: 80px; /* wysokość menu */
-}
+section { scroll-margin-top: 80px; /* Odstęp między menu a sekcjami */ }
 
-/* Menu nawigacyjne */
-nav {
-  display: flex;
-  gap: 18px;
-  position: relative;
-}
-
-/* Linki w menu */
-nav a {
-  color: var(--muted);
-  text-decoration: none;
-  font-weight: 600;
-  padding: 6px 10px;
-  display: inline-block;
-  cursor: pointer;
-}
-
-/* Efekt hover na linkach i przycisku dropdown */
-nav a:hover,
-.dropbtn:hover {
-  color: var(--accent);
-}
-
-/* Kontener dropdown */
+/* =========================
+   Menu dropdown
+   ========================= */
 .dropdown {
   position: relative;
   display: inline-block;
 }
 
-/* Ukrywamy zawartość dropdown domyślnie */
 .dropdown-content {
   display: none;
   position: absolute;
@@ -337,28 +327,38 @@ nav a:hover,
   box-shadow: 0 6px 12px rgba(0,0,0,0.2);
   border-radius: 8px;
   z-index: 100;
-  top: 100%; /* pojawia się tuż pod przyciskiem */
+  top: 100%;
   left: 0;
   padding: 8px 0;
 }
 
-/* Linki w dropdown 
-.dropdown-content a {
-  color: var(--muted);
-  padding: 8px 16px;
-  text-decoration: none;
-  display: block;
-  font-weight: 500;
-}*/
-
-/* Efekt hover linków w dropdown 
-.dropdown-content a:hover {
-  background-color: var(--accent);
-  color: #071017;
-}*/
-
-/* Pokazuje dropdown-content po najechaniu na dropdown */
 .dropdown:hover .dropdown-content {
-  display: block;
+  display: block; /* Pokazanie dropdown przy hover */
 }
 
+/* =========================
+   Navbar mobilny
+   ========================= */
+.navbar .nav-left, .navbar .nav-right {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.navbar .icon { display: none; }
+
+@media screen and (max-width: 768px) {
+  .navbar .nav-left, .navbar .nav-right { flex-direction: column; display: none; width: 100%; }
+  .navbar .icon { display: block; cursor: pointer; }
+}
+
+.menu-icon {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1200px) {
+  #main-nav { display: none; flex-direction: column; gap: 12px; width: 100%; }
+  .menu-icon { display: block; }
+  .dropdown-content { position: relative; box-shadow: none; }
+}
